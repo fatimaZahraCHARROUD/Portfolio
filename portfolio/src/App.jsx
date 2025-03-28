@@ -46,7 +46,7 @@ const App = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto">
-        <Nav.Link href="#about">À Propos d </Nav.Link>
+        <Nav.Link href="#about">À Propos</Nav.Link>
         <Nav.Link href="#skills">Compétences</Nav.Link>
         <Nav.Link href="#experience">Expérience</Nav.Link>
         <Nav.Link href="#projects">Projets</Nav.Link>
