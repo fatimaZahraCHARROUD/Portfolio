@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Navbar, Nav, Col, Row, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import { FaBriefcase, FaGraduationCap, FaCheckCircle, FaLink, FaArrowRight, FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -54,41 +55,51 @@ const App = () => {
       <section id="home" className="home-section">
         <Container>
           <Row className="align-items-center min-vh-80">
-            <Col lg={7} className="home-content">
-              <div className="intro-text">
-                <h6 className="text-uppercase text-primary mb-3">Backend Developer</h6>
-                <h1 className="animated-name mb-4">Charroud Fatima Zahra</h1>
-                <p className="lead mb-4">
-                  Passionate about crafting efficient server-side logic, RESTful APIs, and database-driven solutions with Node.js, Express, and MySQL/MongoDB.
-                </p>
-                <div className="social-icons mb-4">
-                  <a href="https://www.linkedin.com/in/fatima-zahra-charroud-a657812a5/" className="social-link">
-                    <FaLinkedin size={24} />
-                  </a>
-                  <a href="https://github.com/fatimazahracharroud" className="social-link">
-                    <FaGithub size={24} />
-                  </a>
-                </div>
-                <Button href="#projects" className="btn-primary me-3">
-                  View My Work
-                </Button>
-                <Button href="#contact" variant="outline-primary">
-                  Contact Me
-                </Button>
-              </div>
-            </Col>
-            <Col lg={5} className="home-image text-center">
-              <div className="image-container">
-                <img 
-                  src="portfolioimg.webp" 
-                  alt="Fatima Zahra Charroud" 
-                  className="profile-image"
-                  loading="lazy"
-                />
-                <div className="image-overlay"></div>
-              </div>
-            </Col>
-          </Row>
+  {/* Image column first on mobile, second on desktop */}
+  <Col 
+    lg={5} 
+    className="home-image text-center order-1 order-lg-2"
+  >
+    <div className="image-container">
+      <img 
+        src="portfolioimg.webp" 
+        alt="Fatima Zahra Charroud" 
+        className="profile-image mb-2"
+        loading="lazy" 
+      />
+      <div className="image-overlay"></div>
+    </div>
+  </Col>
+
+  {/* Text column second on mobile, first on desktop */}
+  <Col 
+    lg={7} 
+    className="home-content order-2 order-lg-1"
+  >
+    <div className="intro-text">
+      <h6 className="text-uppercase text-primary mb-3">Backend Developer • Computer Engineering Student</h6>
+      <h1 className="animated-name mb-4">Charroud Fatima Zahra</h1>
+      <p className="lead mb-4">
+        Passionate about crafting efficient server-side logic, RESTful APIs, and database-driven solutions with Node.js, Express, and MySQL/MongoDB.
+      </p>
+      <div className="social-icons mb-4">
+        <a href="https://www.linkedin.com/in/fatima-zahra-charroud-a657812a5/" className="social-link">
+          <FaLinkedin size={24} />
+        </a>
+        <a href="https://github.com/fatimazahracharroud" className="social-link">
+          <FaGithub size={24} />
+        </a>
+      </div>
+      <Button href="#projects" className="btn-primary me-3">
+        View My Work
+      </Button>
+      <Button href="#contact" variant="outline-primary">
+        Contact Me
+      </Button>
+    </div>
+  </Col>
+</Row>
+
         </Container>
       </section>
 
@@ -281,66 +292,9 @@ const App = () => {
     </Row>
   </Container>
 
-  {/* Add this CSS to your styles */}
-  <style jsx>{`
-    .service-card {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
+  
     
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-    }
-    
-    .service-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #6c63ff, #8a85ff);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-    }
-    
-    .service-card:hover .service-icon {
-      background: linear-gradient(135deg, #554fd8, #6c63ff);
-    }
-    
-    .service-list {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 0;
-    }
-    
-    .service-list li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 8px;
-      color: #666;
-    }
-    
-    .service-list li:before {
-      content: '•';
-      color: #6c63ff;
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-    
-    @media (max-width: 768px) {
-      .service-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-      }
-    }
-  `}</style>
-</section>
+ </section>
 
       {/* Skills Section */}
 <section id="skills" className="section-py bg-white">
@@ -420,24 +374,7 @@ const App = () => {
     </Row>
   </Container>
 
-  {/* Add this CSS to your styles */}
-  <style jsx>{`
-    .soft-skill-pill {
-      background-color: #ffffff;
-      color: #6c63ff;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 500;
-      border: 1px solid #e9ecef;
-      transition: all 0.3s ease;
-    }
-    
-    .soft-skill-pill:hover {
-      background-color: #6c63ff;
-      color: white;
-      transform: translateY(-2px);
-    }
-  `}</style>
+ 
 </section>
 
  {/* Education Section */}
@@ -453,10 +390,10 @@ const App = () => {
             <div className="timeline-marker"></div>
             <div className="timeline-content">
               <div className="d-flex justify-content-between flex-column flex-md-row">
-                <h4>Computer Engineering – 1st Year</h4>
+                <h4>Computer Engineering – 1st Year (Engineering Cycle)</h4>
                 <span className="timeline-date">2025-Present</span>
               </div>
-              <p className="text-muted mb-0">National School of Applied Engineering, Berkane (ENIADB)</p>
+              <p className="text-muted mb-0">National School of AI and Digital, Berkane (ENIADB)</p>
             </div>
           </div>
           <div className="timeline-item">
@@ -502,14 +439,14 @@ const App = () => {
                   <h4>{item.title}</h4>
                   <span className="timeline-date">{item.period}</span>
                 </div>
-                <p className="text-muted"><ul className="text-start">
+                <div className="text-muted"><ul className="text-start">
   {item.description
     .split('.')
     .filter(sentence => sentence.trim() !== '')
     .map((sentence, i) => (
       <li key={i}>{sentence.trim()}.</li>
   ))}
-</ul></p>
+</ul></div>
               </div>
             </div>
           ))}
@@ -519,79 +456,7 @@ const App = () => {
   </Container>
 </section>
 
-{/* Add this CSS to your styles */}
-<style jsx>{`
-  .education-timeline,
-  .experience-timeline {
-    position: relative;
-    padding-left: 30px;
-  }
-  
-  .education-timeline::before,
-  .experience-timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 2px;
-    background: linear-gradient(to bottom, #6c63ff, #f5f5f5);
-  }
-  
-  .timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-  }
-  
-  .timeline-marker {
-    position: absolute;
-    top: 5px;
-    left: -36px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: #6c63ff;
-    border: 4px solid white;
-    box-shadow: 0 0 0 3px #6c63ff;
-    z-index: 2;
-  }
-  
-  .timeline-content {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-  }
-  
-  .timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  }
-  
-  .timeline-date {
-    color: #6c63ff;
-    font-weight: 600;
-    white-space: nowrap;
-    margin-left: 15px;
-  }
-  
-  @media (max-width: 768px) {
-    .education-timeline,
-    .experience-timeline {
-      padding-left: 20px;
-    }
-    
-    .timeline-marker {
-      left: -26px;
-    }
-    
-    .timeline-date {
-      margin-left: 0;
-      margin-top: 10px;
-    }
-  }
-`}</style>
+ 
 
       {/* Projects Section */}
       <section id="projects" className="section-py bg-light">
@@ -710,475 +575,8 @@ const App = () => {
         </Container>
       </footer>
 
-      {/* Global Styles */}
-      <style jsx global>{`
-        :root {
-          --primary-color: #6c63ff;
-          --secondary-color: #f5f5f5;
-          --dark-color: #333333;
-          --light-color: #ffffff;
-          --text-color: #555555;
-        }
         
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        
-        body {
-          font-family: 'Poppins', sans-serif;
-          color: var(--text-color);
-          line-height: 1.6;
-          overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-          font-weight: 700;
-          color: var(--dark-color);
-        }
-        
-        .section-title {
-          position: relative;
-          padding-bottom: 15px;
-          margin-bottom: 30px;
-        }
-        
-        .section-title::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 50px;
-          height: 3px;
-          background-color: var(--primary-color);
-        }
-        
-        .text-center .section-title::after {
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        
-        /* Navbar Styles */
-        .navbar {
-          transition: all 0.3s ease;
-          padding: 20px 0;
-        }
-        
-        .navbar-transparent {
-          background-color: transparent;
-        }
-        
-        .navbar-scrolled {
-          background-color: var(--light-color);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          padding: 10px 0;
-        }
-        
-        .navbar-brand {
-          display: flex;
-          align-items: center;
-        }
-        
-        .brand-line {
-          width: 30px;
-          height: 2px;
-          background-color: var(--primary-color);
-          margin-right: 10px;
-        }
-        
-        .brand-name {
-          font-weight: 700;
-          color: var(--dark-color);
-        }
-        
-        .nav-link {
-          font-weight: 500;
-          margin: 0 10px;
-          color: var(--dark-color) !important;
-          transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-          color: var(--primary-color) !important;
-        }
-        
-        .nav-contact-btn {
-          background-color: var(--primary-color) !important;
-          color: white !important;
-          padding: 8px 20px !important;
-          border-radius: 30px !important;
-          transition: all 0.3s ease;
-        }
-        
-        .nav-contact-btn:hover {
-          background-color: #554fd8 !important;
-          transform: translateY(-2px);
-        }
-        
-        /* Home Section */
-        .home-section {
-          padding-top: 100px;
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-        
-        .intro-text h6 {
-          letter-spacing: 2px;
-          font-weight: 600;
-        }
-        
-        .animated-name {
-          font-size: 3.5rem;
-          font-weight: 800;
-          background: linear-gradient(45deg, #333333, #6c63ff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          margin-bottom: 20px;
-        }
-        
-        .social-icons {
-          display: flex;
-          gap: 15px;
-        }
-        
-        .social-link {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background-color: var(--light-color);
-          color: var(--dark-color);
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .social-link:hover {
-          background-color: var(--primary-color);
-          color: white;
-          transform: translateY(-3px);
-        }
-        
-        .btn-primary {
-          background-color: var(--primary-color);
-          border-color: var(--primary-color);
-          padding: 12px 30px;
-          border-radius: 30px;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-          background-color: #554fd8;
-          border-color: #554fd8;
-          transform: translateY(-2px);
-        }
-        
-        .btn-outline-primary {
-          color: var(--primary-color);
-          border-color: var(--primary-color);
-          padding: 12px 30px;
-          border-radius: 30px;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-        
-        .btn-outline-primary:hover {
-          background-color: var(--primary-color);
-          color: white;
-          transform: translateY(-2px);
-        }
-        
-        .image-container {
-          position: relative;
-          display: inline-block;
-        }
-        
-        .profile-image {
-          width: 100%;
-          max-width: 400px;
-          height: auto;
-          border-radius: 20px;
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-          position: relative;
-          z-index: 2;
-          animation: float 6s ease-in-out infinite;
-        }
-        
-        .image-overlay {
-          position: absolute;
-          top: 20px;
-          left: 20px;
-          right: -20px;
-          bottom: -20px;
-          background: linear-gradient(135deg, #6c63ff, #333333);
-          border-radius: 20px;
-          z-index: 1;
-        }
-        
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
-          100% { transform: translateY(0px); }
-        }
-        
-        /* Section Spacing */
-        .section-py {
-          padding: 100px 0;
-        }
-        
-        /* About Section */
-        .about-text {
-          font-size: 1.1rem;
-          line-height: 1.8;
-        }
-        
-        .btn-download {
-          background-color: var(--dark-color);
-          border-color: var(--dark-color);
-          padding: 12px 30px;
-          border-radius: 30px;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-        
-        .btn-download:hover {
-          background-color: #555555;
-          border-color: #555555;
-          transform: translateY(-2px);
-        }
-        
-        /* Skills Section */
-        .skill-card {
-          border: none;
-          border-radius: 15px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-          transition: all 0.3s ease;
-          height: 100%;
-        }
-        
-        .skill-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-icon {
-          font-size: 2.5rem;
-          color: var(--primary-color);
-        }
-        
-        .skills-list {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          margin-top: 20px;
-        }
-        
-        .skill-item {
-          display: flex;
-          align-items: center;
-        }
-        
-        /* Timeline */
-        .timeline {
-          position: relative;
-          padding-left: 30px;
-        }
-        
-        .timeline::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 2px;
-          background-color: #e9ecef;
-        }
-        
-        .timeline-item {
-          position: relative;
-          margin-bottom: 30px;
-        }
-        
-        .timeline-item::before {
-          content: '';
-          position: absolute;
-          top: 5px;
-          left: -30px;
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background-color: var(--primary-color);
-          border: 3px solid white;
-          box-shadow: 0 0 0 3px var(--primary-color);
-        }
-        
-        .timeline-content {
-          background-color: white;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .timeline-date {
-          color: var(--primary-color);
-          font-weight: 600;
-        }
-        
-        /* Projects Section */
-        .project-card {
-          border: none;
-          border-radius: 15px;
-          overflow: hidden;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-          transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-image {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .project-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: rgba(108, 99, 255, 0.8);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: all 0.3s ease;
-        }
-        
-        .project-card:hover .project-overlay {
-          opacity: 1;
-        }
-        
-        .project-btn {
-          background-color: white;
-          color: var(--primary-color);
-          border: none;
-          padding: 10px 20px;
-          border-radius: 30px;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-        
-        .project-btn:hover {
-          background-color: var(--dark-color);
-          color: white;
-        }
-        
-        .project-tech {
-          margin-top: 15px;
-          padding-top: 15px;
-          border-top: 1px solid #eee;
-        }
-        
-        /* Contact Section */
-        .contact-links {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 30px;
-        }
-        
-        .contact-link {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          color: var(--text-color);
-          text-decoration: none;
-          transition: all 0.3s ease;
-          padding: 20px;
-          border-radius: 10px;
-          background-color: var(--secondary-color);
-          width: 100px;
-        }
-        
-        .contact-link:hover {
-          color: var(--primary-color);
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-link span {
-          margin-top: 10px;
-          font-size: 0.9rem;
-        }
-        
-        /* Footer */
-        .footer {
-          background-color: var(--dark-color);
-          color: white;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-          .animated-name {
-            font-size: 2.5rem;
-          }
-          
-          .home-content {
-            text-align: center;
-            margin-bottom: 50px;
-          }
-          
-          .social-icons {
-            justify-content: center;
-          }
-          
-          .image-overlay {
-            display: none;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .section-py {
-            padding: 70px 0;
-          }
-          
-          .animated-name {
-            font-size: 2rem;
-          }
-          
-          .contact-links {
-            gap: 15px;
-          }
-          
-          .contact-link {
-            width: 80px;
-            padding: 15px;
-          }
-        }
-        
-        @media (max-width: 576px) {
-          .animated-name {
-            font-size: 1.8rem;
-          }
-          
-          .timeline {
-            padding-left: 20px;
-          }
-          
-          .timeline-item::before {
-            left: -20px;
-          }
-        }
-      `}</style>
-    </div>
+     </div>
   );
 };
 
