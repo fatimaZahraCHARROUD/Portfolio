@@ -510,7 +510,7 @@ const App = () => {
               <Col md={6} lg={4} className="mb-4" key={index}>
                 <Card className="project-card h-100">
                   <div className="project-image">
-                    <Card.Img variant="top" src={project.image} loading="lazy" />
+                    <Card.Img variant="top" src={project.image}  alt={project.title} loading="lazy" />
                     <div className="project-overlay">
                       <Button href={project.link} target="_blank" className="project-btn">
                         View Project
