@@ -36,6 +36,7 @@ const App = () => {
     <>
      <Helmet>
         <title>FatimaZahra Charroud | Web & Mobile Developer</title>
+        <meta name="google-site-verification" content="caKMn6j6rs41CP-TNDO2Ud14w2S4j2RNihjAlDW-2GI" />
         <meta
           name="description"
           content="Web & Mobile developer portfolio showcasing services, modern projects and UI/UX design."
