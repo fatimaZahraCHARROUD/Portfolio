@@ -4,6 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { FaBriefcase, FaGraduationCap, FaCheckCircle, FaLink, FaArrowRight, FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import profileImg from "./assets/portfolioimg.webp";
+import prj1 from "./assets/allonadafa.png";
+import prj2 from "./assets/shopease.webp";
+import prj3 from "./assets/daribati.webp";
+import prj4 from "./assets/school.webp";
+import prj5 from "./assets/hotel.webp";
+
+import { Helmet } from "react-helmet-async";
+
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,6 +33,24 @@ const App = () => {
   ];
 
   return (
+    <>
+     <Helmet>
+        <title>FatimaZahra Charroud | Web & Mobile Developer</title>
+        <meta
+          name="description"
+          content="Web & Mobile developer portfolio showcasing services, modern projects and UI/UX design."
+        />
+        <meta name="keywords" content="React, Frontend Developer, Portfolio, Web Developer, Mobile Developer, UI/UX, Backend Developer, Full Stack, MERN Stack, Flutter, " />
+        <meta name="author" content="FatimaZahra Charroud" />
+
+        {/* Open Graph (social media) */}
+        <meta property="og:title" content="Fatimazahra Charroud Portfolio" />
+        <meta property="og:description" content="Explore my Web & Mobile projects and UI work." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://myportfolio-sigma-green.vercel.app/" />
+      </Helmet>
+    
+    
     <div id="body" className="bg-light">
       {/* Navbar with scroll effect */}
       <Navbar expand="lg" fixed="top" className={isScrolled ? "navbar-scrolled" : "navbar-transparent"}>
@@ -59,11 +86,11 @@ const App = () => {
   >
     <div className="image-container">
       <img 
-        src="portfolioimg.webp" 
+        src={profileImg} 
         alt="Fatima Zahra Charroud" 
         className="profile-image mb-2"
-        loading="lazy" 
-      />
+        loading="eager"
+          decoding="async"      />
       <div className="image-overlay"></div>
     </div>
   </Col>
@@ -466,7 +493,7 @@ const App = () => {
                 title: "Allo Nadafa: Cleaning Service Booking Application",
                 description: "Allo Nadafa is a cleaning service booking application that allows users to schedule cleaning services and enables admins to manage bookings and service providers.",
                 tech: "ReactJS, Node.js/Express, Mongodb ,REST APIs",
-                image: "allonadafa.png",
+                image: prj1,
                 link: "https://github.com/fatimaZahraCHARROUD/Cleaning-dynamic",
                 date: 2025
               },
@@ -475,7 +502,7 @@ const App = () => {
                 title: "ShopEase: E-commerce Management System",
                 description: "E-commerce and delivery management system with web app for order management and mobile apps for customers and delivery personnel.",
                 tech: "ReactJS, Flutter/Dart, Node.js/Express, MySQL",
-                image: "shopease.webp",
+                image: prj2,
                 link: "https://github.com/fatimaZahraCHARROUD/PFE_admin",
                 date: 2025
               },
@@ -483,7 +510,7 @@ const App = () => {
                 title: "DARIBATI: Municipal Tax Management System",
                 description: "System allowing local communities to manage and calculate municipal taxes.",
                 tech: " HTML, CSS, JS, PHP, MySQL",
-                image: "daribati.webp",
+                image: prj3,
                 link: "https://github.com/fatimaZahraCHARROUD/DARIBATI",
                 date: 2024
               },
@@ -491,7 +518,7 @@ const App = () => {
                 title: "Knowledge University: University Management Platform",
                 description: "Platform for managing students, teachers, programs, requests, grades and courses.",
                 tech: " HTML, CSS, JS, PHP, MySQL",
-                image: "school.webp",
+                image: prj4,
                 link: "https://github.com/fatimaZahraCHARROUD/appscolaire",
                 date: 2024
               },
@@ -499,7 +526,7 @@ const App = () => {
                 title: "Hôtel Luxe: Hotel Management System",
                 description: "Management of bookings, rooms and customers for a hotel establishment.",
                 tech: "Java, JEE, JSP, EJB, JDBC, MySQL",
-                image: "hotel.webp",
+                image: prj5,
                 link: "https://github.com/fatimaZahraCHARROUD/Hotel",
                 date: 2024
               }
@@ -574,6 +601,7 @@ const App = () => {
 
         
      </div>
+     </>
   );
 };
 
